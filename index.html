@@ -43,8 +43,25 @@ function load() {
   .then((resp) => resp.json())
   .then(function(data) {
   
-   var display = document.getElementById('guildcount');
- display.innerHTML = data.bot_server_count;
+   var guildcount = document.getElementById('guildcount');
+   guildcount.innerHTML = data.bot_server_count;
+
+   var botrates = document.getElementById('botrates');
+
+var stars = Math.round(data.bot_rate_average)
+
+console.log(stars)
+
+   if(isNaN(stars) || stars > 5 || stars < 1){
+	botrates.innerHTML = "☆☆☆☆☆";
+   } else {
+	if(stars == 1) { botrates.innerHTML = "★☆☆☆☆"; } else
+	if(stars == 2) { botrates.innerHTML = "★★☆☆☆"; } else
+	if(stars == 3) { botrates.innerHTML = "★★★☆☆"; } else
+	if(stars == 4) { botrates.innerHTML = "★★★★☆"; } else
+	if(stars == 5) { botrates.innerHTML = "★★★★★"; }
+   }
+
   })
   .catch(function(error) {
     console.log(error);
@@ -59,9 +76,11 @@ function load() {
 					<header id="header">
 						<span class="avatar" ><img src="images/avatar.png" alt="" /></span>
 						<h1>Welcome to <strong>BurgerBot</strong> official website!<br />
+							<strong id="botrates" style="color:yellow">☆☆☆☆☆</strong>
 						</h1>
+							<div class="centered"><h1>BurgerBot is currently on <strong id="guildcount">n/a</strong> servers.<br /></div>
+
 						
-						<h1>BurgerBot is currently on <strong id="guildcount">n/a</strong> servers.<br />
 							</h1><br>
 						<ul class="icons">
 							<li><img src="images/Invite.png" width="330" height="70" id="test" onmouseover = "document.getElementById('test').style.opacity=0.5" onmouseout = "document.getElementById('test').style.opacity=1"/></li>
@@ -75,6 +94,7 @@ function load() {
 						var invite = document.getElementById("test");
 						var support = document.getElementById("test1");
 						var donate = document.getElementById("test2");
+						var botrates = document.getElementById("botrates");
 
 						invite.onclick = function(){
   							window.open("https://discord.com/oauth2/authorize?client_id=479920381654990851&permissions=8&scope=bot", "_blank");
@@ -86,6 +106,10 @@ function load() {
 
 						donate.onclick = function(){
   							window.open("https://www.patreon.com/", "_blank");
+						}
+
+						botrates.onclick = function(){
+  							window.open("https://discord.boats/bot/479920381654990851", "_blank");
 						}
 					</script>
 
