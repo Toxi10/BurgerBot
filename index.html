@@ -46,13 +46,15 @@ function load() {
    var guildcount = document.getElementById('guildcount');
    guildcount.innerHTML = data.bot_server_count;
 
+   var ratescount = document.getElementById('rating');
    var botrates = document.getElementById('botrates');
 
 var stars = Math.round(data.bot_rate_average)
+var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Math.round(data.bot_rate_three) + Math.round(data.bot_rate_four) + Math.round(data.bot_rate_five)
 
 console.log(stars)
 
-   if(isNaN(stars) || stars > 5 || stars < 1){
+   if(isNaN(stars) || stars > 5 || stars < 1 || !stars){
 	botrates.innerHTML = "☆☆☆☆☆";
    } else {
 	if(stars == 1) { botrates.innerHTML = "★☆☆☆☆"; } else
@@ -60,6 +62,12 @@ console.log(stars)
 	if(stars == 3) { botrates.innerHTML = "★★★☆☆"; } else
 	if(stars == 4) { botrates.innerHTML = "★★★★☆"; } else
 	if(stars == 5) { botrates.innerHTML = "★★★★★"; }
+   }
+
+   if(isNaN(ratings) || !ratings){
+	rating.innerHTML = "0";
+   } else {
+	rating.innerHTML = ratings;
    }
 
   })
@@ -70,16 +78,85 @@ console.log(stars)
 
 </script>
 
+<style>
+	/* Popup container - can be anything you want */
+	.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+	</style>
+
+<script>
+	// When the user clicks on <div>, open the popup
+	function ratespopup() {
+	  var popup = document.getElementById("ratePopup");
+	  popup.classList.toggle("show");
+	}
+
+	function ratespopupleave() {
+	  var popup = document.getElementById("ratePopup");
+	  popup.classList.toggle("show");
+	}
+	</script>
 
 				<!-- Header -->
         <div id="a">
 					<header id="header">
 						<span class="avatar" ><img src="images/avatar.png" alt="" /></span>
 						<h1>Welcome to <strong>BurgerBot</strong> official website!<br />
-							<strong id="botrates" style="color:yellow">☆☆☆☆☆</strong>
+							<div class="popup" ><strong id="botrates" style="color:yellow" onmouseover="ratespopup()" onmouseleave="ratespopupleave()">☆☆☆☆☆</strong>
+								<span class="popuptext" id="ratePopup"><strong id="rating">n/a</strong> votes!</span>
+							  </div>
 						</h1>
 							<div class="centered"><h1>BurgerBot is currently on <strong id="guildcount">n/a</strong> servers.<br /></div>
-
+								
 						
 							</h1><br>
 						<ul class="icons">
