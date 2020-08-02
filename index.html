@@ -17,7 +17,7 @@
 	</head>
 	<body onload="load()">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-		<title></title>
+
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -70,14 +70,12 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 </script>
 
 <style>
-	/* Popup container - can be anything you want */
 	.popup {
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
 
-/* The actual popup (appears on top) */
 .popup .popuptext {
   visibility: hidden;
   width: 160px;
@@ -93,7 +91,6 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
   margin-left: -80px;
 }
 
-/* Popup arrow */
 .popup .popuptext::after {
   content: "";
   position: absolute;
@@ -105,14 +102,12 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
   border-color: #555 transparent transparent transparent;
 }
 
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
 }
 
-/* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
@@ -125,7 +120,6 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 	</style>
 
 <script>
-	// When the user clicks on <div>, open the popup
 	function ratespopup() {
 	  var popup = document.getElementById("ratePopup");
 	  popup.classList.toggle("show");
@@ -151,17 +145,17 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 		
 			</h1><br>
 		<ul class="icons">
-			<li><img src="images/AddToServer.png" width="330" height="70" id="test" onmouseover = "document.getElementById('test').style.opacity=0.5" onmouseout = "document.getElementById('test').style.opacity=1"/></li>
-			<li><img src="images/DiscordServer.png" width="330" height="70" id="test1" onmouseover = "document.getElementById('test1').style.opacity=0.5" onmouseout = "document.getElementById('test1').style.opacity=1"/></li>
-			<li><img src="images/Donateh.png" width="330" height="70" id="test2" onmouseover = "document.getElementById('test2').style.opacity=0.5" onmouseout = "document.getElementById('test2').style.opacity=1"/></li>
+			<li><img src="images/AddToServer.png" width="330" height="70" id="invite" onmouseover = "document.getElementById('invite').style.opacity=0.5" onmouseout = "document.getElementById('invite').style.opacity=1"/></li>
+			<li><img src="images/DiscordServer.png" width="330" height="70" id="server" onmouseover = "document.getElementById('server').style.opacity=0.5" onmouseout = "document.getElementById('server').style.opacity=1"/></li>
+			<li><img src="images/Donate.png" width="330" height="70" id="donate" onmouseover = "document.getElementById('donate').style.opacity=0.5" onmouseout = "document.getElementById('donate').style.opacity=1"/></li>
 		</ul>
 	</header>
 </div>
 
 			<script>
-		var invite = document.getElementById("test");
-		var support = document.getElementById("test1");
-		var donate = document.getElementById("test2");
+		var invite = document.getElementById("invite");
+		var support = document.getElementById("server");
+		var donate = document.getElementById("donate");
 		var botrates = document.getElementById("botrates");
 
 		invite.onclick = function(){
@@ -170,10 +164,6 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 
 		support.onclick = function(){
 			  window.open("https://discord.gg/eZpAEuS", "_blank");
-		}
-
-		donate.onclick = function(){
-			  window.open("https://www.patreon.com/", "_blank");
 		}
 
 		botrates.onclick = function(){
