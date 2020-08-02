@@ -2,13 +2,6 @@
 @import url(font-awesome.min.css);
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200");
 
-/*
-	Visualize by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
-
-/* Reset */
 
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
@@ -49,15 +42,11 @@
 		-webkit-text-size-adjust: none;
 	}
 
-/* Box Model */
-
 	*, *:before, *:after {
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 	}
-
-/* Grid */
 
 	.row {
 		border-bottom: solid 1px transparent;
@@ -1390,8 +1379,6 @@
 
 	}
 
-/* Basic */
-
 	@-ms-viewport {
 		width: device-width;
 	}
@@ -1425,8 +1412,6 @@
 			-ms-transition: none !important;
 			transition: none !important;
 		}
-
-/* Type */
 
 	body, input, select, textarea {
 		color: rgba(255, 255, 255, 0.65);
@@ -1605,8 +1590,6 @@
 		text-align: right;
 	}
 
-/* Section/Article */
-
 	section.special, article.special {
 		text-align: center;
 	}
@@ -1633,8 +1616,6 @@
 		font-size: 0.9em;
 		margin-top: -0.6em;
 	}
-
-/* Form */
 
 	form {
 		margin: 0 0 2em 0;
@@ -1833,8 +1814,6 @@
 		opacity: 1.0;
 	}
 
-/* Box */
-
 	.box {
 		border-radius: 4px;
 		border: solid 1px rgba(255, 255, 255, 0.25);
@@ -1913,8 +1892,6 @@
 
 			}
 
-/* Image */
-
 	.image {
 		border-radius: 4px;
 		border: 0;
@@ -1966,8 +1943,6 @@
 			.image.main img {
 				width: 100%;
 			}
-
-/* List */
 
 	ol {
 		list-style: decimal;
@@ -2136,8 +2111,6 @@
 			margin-left: 2em;
 		}
 
-/* Table */
-
 	.table-wrapper {
 		-webkit-overflow-scrolling: touch;
 		overflow-x: auto;
@@ -2203,8 +2176,6 @@
 			table.alt tfoot {
 				border-top: 0;
 			}
-
-/* Button */
 
 	input[type="submit"],
 	input[type="reset"],
@@ -2379,8 +2350,6 @@
 
 		}
 
-/* Thumbnails */
-
 	.thumbnails {
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -2494,8 +2463,6 @@
 
 		}
 
-/* Poptrox */
-
 	.poptrox-popup {
 		-moz-box-sizing: content-box;
 		-webkit-box-sizing: content-box;
@@ -2556,8 +2523,6 @@
 				opacity: 1.0;
 			}
 
-/* Wrapper */
-
 	#wrapper {
 		max-width: 68em;
 		width: 100%;
@@ -2585,8 +2550,6 @@
 		-ms-filter: blur(3px);
 		filter: blur(3px);
 	}
-
-/* Header */
 
 	#header {
 		text-align: center;
@@ -2620,8 +2583,6 @@
 			}
 
 		}
-
-/* Footer */
 
 	#footer {
 		text-align: center;
