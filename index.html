@@ -12,17 +12,25 @@
 		<meta property="og:description" content="Invite BurgerBot 3.0 on your server!" />
 		<meta name="theme-color" content="#7b00c1">
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body onload="load()">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 
-
 		<!-- Wrapper -->
 			<div id="wrapper">
 
         <style>
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}
+
 div.a {
 	text-align: center;
 }
@@ -144,18 +152,57 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 				
 		
 			</h1><br>
-		<ul class="icons">
-			<li><img src="images/AddToServer.png" width="330" height="70" id="invite" onmouseover = "document.getElementById('invite').style.opacity=0.5" onmouseout = "document.getElementById('invite').style.opacity=1"/></li>
-			<li><img src="images/DiscordServer.png" width="330" height="70" id="server" onmouseover = "document.getElementById('server').style.opacity=0.5" onmouseout = "document.getElementById('server').style.opacity=1"/></li>
-			<li><img src="images/Donate.png" width="330" height="70" id="donate" onmouseover = "document.getElementById('donate').style.opacity=0.5" onmouseout = "document.getElementById('donate').style.opacity=1"/></li>
-		</ul>
+
+			<style>
+				* {
+				  box-sizing:border-box;
+				}
+				
+				.left {
+				  padding:20px;
+				  float:left;
+				  width:33%;
+				}
+				
+				.main {
+				  padding:20px;
+				  float:left;
+				  width:33%;
+				}
+				
+				.right {
+				  padding:20px;
+				  float:left;
+				  width:33%;
+				}
+				
+				@media screen and (max-width:800px) {
+				  .left, .main, .right {
+					width:100%;
+				  }
+				}
+				</style>
+
+<div class="left">
+	<img src="images/AddToServer.png" width="330" height="70" id="Invite" onmouseover = "document.getElementById('Invite').style.opacity=0.5" onmouseout = "document.getElementById('Invite').style.opacity=1"/>
+  </div>
+  
+  <div class="main">
+	<img src="images/DiscordServer.png" width="330" height="70" id="Server" onmouseover = "document.getElementById('Server').style.opacity=0.5" onmouseout = "document.getElementById('Server').style.opacity=1"/>
+  </div>
+  
+  <div class="right">
+	<img src="images/Donate.png" width="330" height="70" id="Donate" onmouseover = "document.getElementById('Donate').style.opacity=0.5" onmouseout = "document.getElementById('Donate').style.opacity=1"/>
+  </div>
 	</header>
 </div>
+<br>
+<hr style="height:2px;border-width:100;color:gray;background-color:white">
 
 			<script>
-		var invite = document.getElementById("invite");
-		var support = document.getElementById("server");
-		var donate = document.getElementById("donate");
+		var invite = document.getElementById("Invite");
+		var support = document.getElementById("Server");
+		var donate = document.getElementById("Donate");
 		var botrates = document.getElementById("botrates");
 
 		invite.onclick = function(){
@@ -196,7 +243,7 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 									<a>
 										<h3 style="color:cyan;">Burgerbot's commands list</h3>
 										<!-- TABLE START -->
-										<table border="0" cellpadding="0" cellspacing="0" id="sheet0" class="sheet0 gridlines">
+										<table border="0" cellpadding="0" cellspacing="0" id="sheet0" class="sheet0 gridlines" style="max-width:100%;height:auto;">
 											<col class="col0">
 											<col class="col1">
 											<col class="col2">
