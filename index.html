@@ -99,10 +99,6 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
   margin-left: -80px;
 }
 
-.title {
-	font-size: 4vw
-}
-
 .popup .popuptext::after {
   content: "";
   position: absolute;
@@ -145,28 +141,21 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 
 <!-- Header -->
 <div id="a">
-	<header id="header">
-		<span class="avatar" ><img src="images/avatar.png" alt="" /></span>
-		<h1 class=>Welcome to <strong>BurgerBot</strong> official website!<br>
-		Currently on <strong id="guildcount">n/a</strong> servers.
-		</h1>
-		<div class="popup" ><h1><strong id="botrates" style="color:yellow" onmouseover="ratespopup()" onmouseleave="ratespopupleave()">☆☆☆☆☆</strong>
-			<span class="popuptext" id="ratePopup"><strong id="rating">n/a</strong> votes!</span>
-		</h1></div>
-			
-				
-		
-			</h1><br>
+		<header id="header">
+			<span class="avatar" ><img src="images/avatar.png" alt="" /></span>
+			<h1 class=>Welcome to <strong>BurgerBot</strong> official website!<br>
+			Currently on <strong id="guildcount">n/a</strong> servers.
+			</h1>
+			<div class="popup" ><h1><strong id="botrates" style="color:yellow" onmouseover="ratespopup()" onmouseleave="ratespopupleave()">☆☆☆☆☆</strong>
+				<span class="popuptext" id="ratePopup"><strong id="rating">n/a</strong> votes!</span>
+			</h1></div>
+			<br>
 
 			<style>
-				
 				* {
 				  box-sizing:border-box;
 				}
-				.table {
-					width:100px;
-    				height:100%;
-				}
+				
 				.left {
 				  padding:0px;
 				  float:left;
@@ -183,6 +172,18 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 				  padding:0px;
 				  float:left;
 				  width:33%;
+				}
+
+				.tableleft {
+				  padding:0px;
+				  float:left;
+				  width:70%;
+				}
+
+				.tableright {
+				  padding:0px;
+				  float:left;
+				  width:30%;
 				}
 				
 				@media screen and (max-width:800px) {
@@ -206,7 +207,7 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 	</header>
 </div>
 <br>
-<hr style="height:2px;border-width:2px;color:gray;background-color:white">
+<hr style="height:2px;border-width:100;color:gray;background-color:white">
 
 			<script>
 		var invite = document.getElementById("Invite");
@@ -248,7 +249,7 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 						<br>
 						<!-- Thumbnails -->
 							<section class="thumbnails">
-								<div class="table">
+								<div style="width:800px; margin:0 auto;" class="tableright">
 									<a>
 										<h3 style="color:cyan;">Burgerbot's commands list</h3>
 										<!-- TABLE START -->
@@ -546,7 +547,7 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 										<!-- TABLE END -->
 									</a>
 								</div>
-								<div>
+								<div class="tableright">
 									<a>
 										<h1><span class="emoji" style="color:cyan;">⚠️ Legend:</span></h1>
 										<h3>
