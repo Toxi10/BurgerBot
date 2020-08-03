@@ -99,6 +99,10 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
   margin-left: -80px;
 }
 
+.title {
+	font-size: 2vw
+}
+
 .popup .popuptext::after {
   content: "";
   position: absolute;
@@ -143,7 +147,7 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 <div id="a">
 	<header id="header">
 		<span class="avatar" ><img src="images/avatar.png" alt="" /></span>
-		<h1>Welcome to <strong>BurgerBot</strong> official website!<br>
+		<h1 class="title">Welcome to <strong>BurgerBot</strong> official website!<br>
 			<div class="popup" ><strong id="botrates" style="color:yellow" onmouseover="ratespopup()" onmouseleave="ratespopupleave()">☆☆☆☆☆</strong>
 				<span class="popuptext" id="ratePopup"><strong id="rating">n/a</strong> votes!</span>
 			  </div>
