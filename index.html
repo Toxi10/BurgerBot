@@ -1,49 +1,70 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="icon" href="images/avatar.png">
+	<title>BurgerBot 3.0</title>
+	<meta property="og:title" content="BurgerBot 3.0" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://toxi10.github.io/BurgerBot/" />
+	<meta property="og:image" content="https://toxi10.github.io/BurgerBot/images/avatar.png" />
+	<meta property="og:description" content="Invite BurgerBot 3.0 on your server!" />
+	<meta name="theme-color" content="#7b00c1">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/style.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+	
+</head>
 
-	<head>
-		<link rel="icon" href="images/avatar.png">
-		<title>BurgerBot 3.0</title>
-		<meta property="og:title" content="BurgerBot 3.0" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://toxi10.github.io/BurgerBot/" />
-		<meta property="og:image" content="https://toxi10.github.io/BurgerBot/images/avatar.png" />
-		<meta property="og:description" content="Invite BurgerBot 3.0 on your server!" />
-		<meta name="theme-color" content="#7b00c1">
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
+<style>
+	body {
+	  margin: 0;
+	}
+	.navbar a {
+	  text-decoration: none;
+	  font-size: 18px;
+	  vertical-align: auto;
+	}
+	.navbar a:hover {
+	  color: #ffffff;
+	}
+
+  </style>
+
 	<body onload="load()">
-		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<nav class="navbar">
+			<link rel="stylesheet" href="/assets/css/style.css" />
+			<style>
+			.img-circle {
+			
+				border-radius: 50%;
+				width: 50px;
+				height: 50px;
+				vertical-align: middle; 
+			}
+			
+			.logo {
+				padding-top: 0% ;
+				font-size: 35px;
+			}
+				</style>
+				
+				<div style="display: inline">
+					<a href="/"><img style="vertical-align:middle" src="images/logolines.png" width="3%" height="3%" ></a>
+					<span class="logo" style="vertical-align:middle; padding-left:10px"><strong>BurgerBot</strong></span>
+				</div>
+		</nav>
+		<div class="container">
+		<style type="text/css">
+			@page { size: 8.27in 11.69in; margin-left: 0.79in; margin-right: 0.79in; margin-top: 0.98in; margin-bottom: 0.79in }
+			p { margin-bottom: 0.1in; direction: ltr; line-height: 115%; text-align: left; orphans: 2; widows: 2 }
+		</style>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-        <style>
-
-.container {
-    max-width: 1500px;
-    min-width: 700px;
-}
-
-@viewport {
-  width: device-width ;
-  zoom: 1.0 ;
-}
-@viewport {
-  width: device-width ;
-  zoom: 1.0 ;
-}
-
-div.a {
-	text-align: center;
-}
-</style>
-		
 <script>
-
 function load() {
   var url = "https://discord.boats/api/bot/479920381654990851";
   fetch(url)
@@ -62,11 +83,30 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
    if(isNaN(stars) || stars > 5 || stars < 1 || !stars){
 	botrates.innerHTML = "☆☆☆☆☆";
    } else {
-	if(stars == 1) { botrates.innerHTML = "★☆☆☆☆"; } else
-	if(stars == 2) { botrates.innerHTML = "★★☆☆☆"; } else
-	if(stars == 3) { botrates.innerHTML = "★★★☆☆"; } else
-	if(stars == 4) { botrates.innerHTML = "★★★★☆"; } else
-	if(stars == 5) { botrates.innerHTML = "★★★★★"; }
+	switch(stars) {
+		case 1:
+			botrates.innerHTML = "★☆☆☆☆";
+		break;
+
+		case 2:
+			botrates.innerHTML = "★★☆☆☆";
+		break;
+
+		case 3:
+			botrates.innerHTML = "★★★☆☆";
+		break;
+
+		case 4:
+			botrates.innerHTML = "★★★★☆";
+		break;
+
+		case 5:
+			botrates.innerHTML = "★★★★★";
+		break;
+
+		default:
+			botrates.innerHTML = "☆☆☆☆☆";
+	}
    }
 
    if(isNaN(ratings) || !ratings){
@@ -81,59 +121,7 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
   });   
 }
 
-</script>
-
-<style>
-	.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
-}
-
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
-}
-
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-	</style>
-
-<script>
+	// When the user clicks on <div>, open the popup
 	function ratespopup() {
 	  var popup = document.getElementById("ratePopup");
 	  popup.classList.toggle("show");
@@ -146,69 +134,47 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 </script>
 
 <!-- Header -->
-<div id="a">
-		<header id="header">
-			<div class="container">
-			<span class="avatar" ><img src="images/avatar.png" alt="" /></span>
-			<h1 class=>Welcome to <strong>BurgerBot</strong> official website!<br>
-			Currently on <strong id="guildcount">n/a</strong> servers.
-			</h1>
-			<div class="popup" ><h1><strong id="botrates" style="color:yellow" onmouseover="ratespopup()" onmouseleave="ratespopupleave()">☆☆☆☆☆</strong>
-				<span class="popuptext" id="ratePopup"><strong id="rating">n/a</strong> votes!</span>
-			</h1></div>
+<div class="head">
+	<header>
+        <br>
+        <div class="circle">
+        <img class="avatar" src="images/Avatar.png">
+        </div>
+
+		<h1>Welcome to <strong class="title">BurgerBot</strong> official website!<br />
+			<div class="popup" ><strong id="botrates" style="color:yellow" onmouseover="ratespopup()" onmouseleave="ratespopupleave()">☆☆☆☆☆</strong>
+				<span class="popuptext" id="ratePopup"><strong id="rating" class="minititle">n/a</strong> votes!</span>
+			</div>
+		</h1>
+			<div class="centered"><h1>BurgerBot is currently on <strong class="minititle" id="guildcount">n/a</strong> servers.</h1></div>
 			<br>
-
-			<style>
-				* {
-				  box-sizing:border-box;
-				}
-				
-				.left {
-				  padding:0px;
-				  float:left;
-				  width:33%;
-				}
-				
-				.main {
-				  padding:0px;
-				  float:left;
-				  width:33%;
-				}
-				
-				.right {
-				  padding:0px;
-				  float:left;
-				  width:33%;
-				}
-				
-				@media screen and (max-width:800px) {
-				  .left, .main, .right {
-					width:100%;
-				  }
-				}
-				</style>
-
-<div class="left">
-	<img src="images/AddToServer.png" width="330" height="70" id="Invite" onmouseover = "document.getElementById('Invite').style.opacity=0.5" onmouseout = "document.getElementById('Invite').style.opacity=1"/>
-  </div>
-  
-  <div class="main">
-	<img src="images/DiscordServer.png" width="330" height="70" id="Server" onmouseover = "document.getElementById('Server').style.opacity=0.5" onmouseout = "document.getElementById('Server').style.opacity=1"/>
-  </div>
-  
-  <div class="right">
-	<img src="images/Donate.png" width="330" height="70" id="Donate" onmouseover = "document.getElementById('Donate').style.opacity=0.5" onmouseout = "document.getElementById('Donate').style.opacity=1"/>
-  </div>
-</div>
+		<ul class="buttons">
+            <button class="button" width="330" height="70" id="test" onmouseover = "document.getElementById('test').style.opacity=0.5" onmouseout = "document.getElementById('test').style.opacity=1"/><strong>Add To Server</strong></button>
+            <button class="button" width="330" height="70" id="test1" onmouseover = "document.getElementById('test1').style.opacity=0.5" onmouseout = "document.getElementById('test1').style.opacity=1"/><strong>Discord Server</strong></button>
+            <button class="button" width="330" height="70" id="test2" onmouseover = "document.getElementById('test2').style.opacity=0.5" onmouseout = "document.getElementById('test2').style.opacity=1"/><strong>Donate</strong></button>
+		</ul>
+		
+		<br>
+        <hr style="border-top: 1px solid aqua">
+		<div class="centered"><h1><strong class="minititle">Commands List</strong></h1></div>
+		<br>
+		<div class="centered" id="commands"><h2><strong>🕹️ | Fun (13): </strong> <span>8ball</span>, <span>achievement</span>, <span>ascii</span>, <span>coinflip</span>, <span>fish</span>, <span>fliptext</span>, <span>meme</span>, <span>pokemon</span>, <span>roll</span>, <span>rps</span>, <span>slot</span>, <span>spin</span>, <span>xkcd</span></h2></div>
+		<div class="centered" id="commands"><h2><strong>🎎 | RolePlay (21): </strong> <span>bite</span>, <span>clap</span>, <span>cry</span>, <span>cuddle</span>, <span>dance</span>, <span>facepalm</span>, <span>feed</span>, <span>highfive</span>, <span>hug</span>, <span>kill</span>, <span>kiss</span>, <span>lick</span>, <span>pat</span>, <span>poke</span>, <span>pout</span>, <span>run</span>, <span>shy</span>, <span>sip</span>, <span>slap</span>, <span>smug</span>, <span>tickle</span></h2></div>
+		<div class="centered" id="commands"><h2><strong>⚖️ | Moderation (10): </strong> <span>ban</span>, <span>delwarn</span>, <span>kick</span>, <span>mute</span>, <span>purge</span>, <span>tempban</span>, <span>tempmute</span>, <span>unmute</span>, <span>warn</span>, <span>warns</span></h2></div>
+		<div class="centered" id="commands"><h2><strong>🖼️ | Image (12): </strong> <span>art</span>, <span>cat</span>, <span>dog</span>, <span>fox</span>, <span>gay</span>, <span>padoru</span>, <span>pixelate</span>, <span>prison</span>, <span>rip</span>, <span>shit</span>, <span>triggered</span>, <span>wanted</span></h2></div>
+		<div class="centered" id="commands"><h2><strong>💰 | Economy (8): </strong> <span>balance</span>, <span>daily</span>, <span>gift</span>, <span>inventory</span>, <span>pay</span>, <span>shop</span>, <span>use</span>, <span>work</span></h2></div>
+		<div class="centered" id="commands"><h2><strong>🔊 | SoundBoard (14): </strong> <span>airhorn</span>, <span>bell</span>, <span>bruh</span>, <span>cena</span>, <span>cheers</span>, <span>cough</span>, <span>duck</span>, <span>fart</span>, <span>knocking</span>, <span>meow</span>, <span>nope</span>, <span>pinged</span>, <span>toilet</span>, <span>winxp</span></h2></div>
+		<div class="centered" id="commands"><h2><strong>🔞 | NSFW (11): </strong> <span>ass</span>, <span>bdsm</span>, <span>cum</span>, <span>doujin</span>, <span>femdom</span>, <span>hentai</span>, <span>maid</span>, <span>neko</span>, <span>orgy</span>, <span>panties</span>, <span>uniform</span></h2></div>
+		<div class="centered" id="commands"><h2><strong>🛠️ | Utility (15): </strong> <span>avatar</span>, <span>botinfo</span>, <span>eval</span>, <span>hastebin</span>, <span>help</span>, <span>invite</span>, <span>leaderboard</span>, <span>osu</span>, <span>ping</span>, <span>poll</span>, <span>rank</span>, <span>report</span>, <span>say</span>, <span>serverinfo</span>, <span>userinfo</span></h2></div>
+		<br><br>
+        <hr style="border-top: 1px solid aqua">
 	</header>
 </div>
-<br>
-<hr style="height:2px;border-width:100;color:gray;background-color:white">
 
 			<script>
-		var invite = document.getElementById("Invite");
-		var support = document.getElementById("Server");
-		var donate = document.getElementById("Donate");
+		var invite = document.getElementById("test");
+		var support = document.getElementById("test1");
+		var donate = document.getElementById("test2");
 		var botrates = document.getElementById("botrates");
 
 		invite.onclick = function(){
@@ -219,359 +185,31 @@ var ratings = Math.round(data.bot_rate_one) + Math.round(data.bot_rate_two) + Ma
 			  window.open("https://discord.gg/eZpAEuS", "_blank");
 		}
 
+		donate.onclick = function(){
+			  window.open("https://www.patreon.com/", "_blank");
+		}
+
 		botrates.onclick = function(){
 			  window.open("https://discord.boats/bot/479920381654990851", "_blank");
 		}
 	</script>
 
 <style>
-	h1.minititle {
-		text-shadow: 2px 2px black;
-	}
 	td.title {
 		text-shadow: 2px 2px black;
-	}
+	}	
 </style>
 
-				<!-- Main -->
-					<section id="main" class="container">
-						
-						<h1 class="minititle"><strong>Who is BurgerBot?</strong></h1>
-						<h2>BurgerBot is a multi-purpose bot with a lot of commands for moderation, fun, utility, economy and nsfw.</h2>
-						<br>
-						<h1 class="minititle"><strong>Need help?</strong></h1>
-						<h2>If you need help join our <a href="https://discord.gg/eZpAEuS" target="_blank" style="color:cyan;">support</a> server.</h2>
-						<h2></h2>
-						<br>
-						<br>
-						<!-- Thumbnails -->
-							<section class="thumbnails">
-								<div style="width:800px; margin:10 auto;">
-									<a>
-										<h3 style="color:cyan;">Burgerbot's commands list</h3>
-										<!-- TABLE START -->
-										<table width="100%" border="10" cellspacing="0" cellpadding="0">
-											<col class="col0">
-											<col class="col1">
-											<col class="col2">
-											<col class="col3">
-											<col class="col4">
-											<col class="col5">
-											<col class="col6">
-											<col class="col7">
-											<col class="col8">
-											<tbody>
-											  <tr class="row0">
-												<td class="title" colspan="9" ><h3 style="font-size:30px;"><b>&gt; Fun Commands</b></h3></td>
-											  </tr>
-											  <tr class="row1">
-												<td class="column0 style13 s style13" colspan="3">b!rps &lt;@user&gt;</td>
-												<td class="column3 style3 s style3" colspan="6">Play Rock, Paper, Scissor with other users</td>
-											  </tr>
-											  <tr class="row2">
-												<td class="column0 style2 s style2" colspan="3">b!spin</td>
-												<td class="column3 style2 s style2" colspan="6">Spin your fidget spinner</td>
-											  </tr>
-											  <tr class="row3">
-												<td class="column0 style3 s style3" colspan="3">b!slot</td>
-												<td class="column3 style3 s style3" colspan="6">Play with slot machines</td>
-											  </tr>
-											  <tr class="row4">
-												<td class="column0 style2 s style2" colspan="3">b!8ball &lt;question&gt;</td>
-												<td class="column3 style2 s style2" colspan="6">Play with the magic 8-ball</td>
-											  </tr>
-											  <tr class="row5">
-												<td class="column0 style3 s style3" colspan="3">b!fish</td>
-												<td class="column3 style3 s style3" colspan="6">Do you like fishing?</td>
-											  </tr>
-											  <tr class="row6">
-												<td class="column0 style2 s style2" colspan="3">b!coinflip</td>
-												<td class="column3 style2 s style2" colspan="6">Toss a coin</td>
-											  </tr>
-											  <tr class="row7">
-												<td class="column0 style3 s style3" colspan="3">b!roll [number]</td>
-												<td class="column3 style3 s style3" colspan="6">Roll a dice</td>
-											  </tr>
-											<!-- row mancante -->
-											  <tr class="row9">
-												<td class="column0 style3 s style3" colspan="3">b!achievement &lt;text&gt;</td>
-												<td class="column3 style3 s style3" colspan="6">Achievement get</td>
-											  </tr>
-											  <tr class="row10">
-												<td class="column0 style2 s style2" colspan="3">b!gif &lt;text&gt;</td>
-												<td class="column3 style2 s style2" colspan="6">Search random gif</td>
-											  </tr>
-											  <tr class="row11">
-												<td class="column0 style3 s style3" colspan="3">b!xkcd</td>
-												<td class="column3 style3 s style3" colspan="6">Search xkcd comics</td>
-											  </tr>
-											  <tr class="row12">
-												<td class="column0 style2 s style2" colspan="3">b!ascii &lt;text&gt;</td>
-												<td class="column3 style2 s style2" colspan="6">Create cool text</td>
-											  </tr>
-											  <tr class="row13">
-												<td class="column0 style3 s style3" colspan="3">b!say &lt;text&gt;</td>
-												<td class="column3 style3 s style3" colspan="6">Tell me what to say</td>
-											  </tr>
-											  <tr class="row14">
-												<td class="column0 style2 s style2" colspan="3">b!pokemon</td>
-												<td class="column3 style2 s style2" colspan="6">Get a random pokemon stats</td>
-											  </tr>
-											  <tr class="row15">
-												<td class="column0 style3 s style3" colspan="3">b!fliptext &lt;text&gt;</td>
-												<td class="column3 style3 s style3" colspan="6">Write your text in backwards</td>
-											  </tr>
-											  <tr class="row16">
-												<td class="title" colspan="9" ><h3 style="font-size:30px;"><b>&gt; RolePlay Commands</b></h3></td>
-											  </tr>
-											  <tr class="row17">
-												<td class="column0 style3 s style3" colspan="3">b!kiss [@user]</td>
-												<td class="column3 style3 s style3" colspan="6">Kisses an user</td>
-											  </tr>
-											  <tr class="row18">
-												<td class="column0 style2 s style2" colspan="3">b!pat [@user]</td>
-												<td class="column3 style2 s style2" colspan="6">Pats an user</td>
-											  </tr>
-											  <tr class="row19">
-												<td class="column0 style3 s style3" colspan="3">b!hug [@user]</td>
-												<td class="column3 style3 s style3" colspan="6">Hugs an user</td>
-											  </tr>
-											  <tr class="row20">
-												<td class="column0 style2 s style2" colspan="3">b!slap [@user]</td>
-												<td class="column3 style2 s style2" colspan="6">Slaps an user</td>
-											  </tr>
-											  <tr class="row21">
-												<td class="column0 style3 s style3" colspan="3">b!feed [@user]</td>
-												<td class="column3 style3 s style3" colspan="6">Feeds an user</td>
-											  </tr>
-											  <tr class="row22">
-												<td class="column0 style2 s style2" colspan="3">b!poke [@user]</td>
-												<td class="column3 style2 s style2" colspan="6">Pokes an user</td>
-											  </tr>
-											  <tr class="row23">
-												<td class="title" colspan="9" ><h3 style="font-size:30px;"><b>&gt; Moderation Commands</b></h3></td>
-											  </tr>
-											  <tr class="row24">
-												<td class="column0 style3 s style3" colspan="3">b!warn &lt;@user&gt; [reason] 🛡️</td>
-												<td class="column3 style3 s style3" colspan="6">Warn an user</td>
-											  </tr>
-											  <tr class="row25">
-												<td class="column0 style2 s style2" colspan="3">b!warns &lt;@user&gt; 🛡️</td>
-												<td class="column3 style2 s style2" colspan="6">Check user warns</td>
-											  </tr>
-											  <tr class="row26">
-												<td class="column0 style3 s style3" colspan="3">b!ban &lt;@user&gt; [reason] 🛡️</td>
-												<td class="column3 style3 s style3" colspan="6">Ban an user in the server</td>
-											  </tr>
-											  <tr class="row27">
-												<td class="column0 style2 s style2" colspan="3">b!kick &lt;@user&gt; [reason] 🛡️</td>
-												<td class="column3 style2 s style2" colspan="6">Kick an user in the server</td>
-											  </tr>
-											  <tr class="row28">
-												<td class="column0 style3 s style3" colspan="3">b!purge &lt;amount&gt; 🛡️</td>
-												<td class="column3 style3 s style3" colspan="6">Clear messages</td>
-											  </tr>
-											  <tr class="row29">
-												<td class="column0 style2 s style2" colspan="3">b!mute &lt;@user&gt; 🛡️</td>
-												<td class="column3 style2 s style2" colspan="6">Mute an user in the server</td>
-											  </tr>
-											  <tr class="row30">
-												<td class="column0 style3 s style3" colspan="3">b!unmute &lt;@user&gt; 🛡️</td>
-												<td class="column3 style3 s style3" colspan="6">Unmute an user in the server</td>
-											  </tr>
-											  <tr class="row31">
-												<td class="title" colspan="9" ><h3 style="font-size:30px;"><b>&gt; Image Commands</b></h3></td>
-											  </tr>
-											  <tr class="row32">
-												<td class="column0 style3 s style3" colspan="3">b!art [@user]</td>
-												<td class="column3 style3 null style3" colspan="6"></td>
-											  </tr>
-											  <tr class="row33">
-												<td class="column0 style2 s style2" colspan="3">b!rip [@user]</td>
-												<td class="column3 style2 null style2" colspan="6"></td>
-											  </tr>
-											  <tr class="row34">
-												<td class="column0 style3 s style3" colspan="3">b!shit [@user]</td>
-												<td class="column3 style3 null style3" colspan="6"></td>
-											  </tr>
-											  <tr class="row35">
-												<td class="column0 style2 s style2" colspan="3">b!wanted [@user]</td>
-												<td class="column3 style2 null style2" colspan="6"></td>
-											  </tr>
-											  <tr class="row36">
-												<td class="column0 style3 s style3" colspan="3">b!prison [@user]</td>
-												<td class="column3 style3 null style3" colspan="6"></td>
-											  </tr>
-											  <tr class="row37">
-												<td class="column0 style2 s style2" colspan="3">b!gay [@user]</td>
-												<td class="column3 style2 null style2" colspan="6"></td>
-											  </tr>
-											  <tr class="row36">
-												<td class="column0 style3 s style3" colspan="3">b!fox</td>
-												<td class="column3 style3 null style3" colspan="6">Get random fox pics</td>
-											  </tr>
-											  <tr class="row37">
-												<td class="column0 style2 s style2" colspan="3">b!cat</td>
-												<td class="column3 style2 null style2" colspan="6">Get random cat pics</td>
-											  </tr>
-											  <tr class="row36">
-												<td class="column0 style3 s style3" colspan="3">b!dog</td>
-												<td class="column3 style3 null style3" colspan="6">Get random dog pics</td>
-											  </tr>
-											  <tr class="row38">
-												<td class="title" colspan="9" ><h3 style="font-size:30px;"><b>&gt; Economy Commands</b></h3></td>
-											  </tr>
-											  <tr class="row39">
-												<td class="column0 style3 s style3" colspan="3">b!daily</td>
-												<td class="column3 style3 s style3" colspan="6">Get daily reward</td>
-											  </tr>
-											  <tr class="row40">
-												<td class="column0 style2 s style2" colspan="3">b!balance [@user]</td>
-												<td class="column3 style2 s style2" colspan="6">View user wallet</td>
-											  </tr>
-											  <tr class="row41">
-												<td class="column0 style3 s style3" colspan="3">b!shop &lt;list/buy&gt; [item]</td>
-												<td class="column3 style3 s style3" colspan="6">View/Buy items</td>
-											  </tr>
-											  <tr class="row42">
-												<td class="column0 style3 s style3" colspan="3">b!pay &lt;@user&gt; &lt;amount&gt;</td>
-												<td class="column3 style3 s style3" colspan="6">Send money to other users</td>
-											  </tr>
-											  <tr class="row43">
-												<td class="column0 style12 s style12" colspan="3">b!inventory [@user]</td>
-												<td class="column3 style2 s style2" colspan="6">View user items</td>
-											  </tr>
-											  <tr class="row44">
-												<td class="title" colspan="9" ><h3 style="font-size:30px;"><b>&gt; NSFW Commands</b></h3></td>
-											  </tr>
-											  <tr class="row45">
-												<td class="column0 style3 s style3" colspan="3">b!hentai 🔞</td>
-												<td class="column3 style3 s style3" colspan="6">Get hentai images</td>
-											  </tr>
-											  <tr class="row46">
-												<td class="column0 style2 s style2" colspan="3">b!ass 🔞</td>
-												<td class="column3 style2 s style2" colspan="6">Get ass images</td>
-											  </tr>
-											  <tr class="row47">
-												<td class="column0 style3 s style3" colspan="3">b!bdsm 🔞</td>
-												<td class="column3 style3 s style3" colspan="6">Get bdsm images</td>
-											  </tr>
-											  <tr class="row48">
-												<td class="column0 style2 s style2" colspan="3">b!cum 🔞</td>
-												<td class="column3 style2 s style2" colspan="6">Get cum images</td>
-											  </tr>
-											  <tr class="row49">
-												<td class="column0 style9 s style11" colspan="3">b!femdom 🔞</td>
-												<td class="column3 style9 s style11" colspan="6">Get femdom images</td>
-											  </tr>
-											  <tr class="row50">
-												<td class="column0 style2 s style2" colspan="3">b!panties 🔞</td>
-												<td class="column3 style2 s style2" colspan="6">Get panties images</td>
-											  </tr>
-											  <tr class="row51">
-												<td class="column0 style3 s style3" colspan="3">b!orgy 🔞</td>
-												<td class="column3 style9 s style11" colspan="6">Get orgy images</td>
-											  </tr>
-											  <tr class="row52">
-												<td class="column0 style2 s style2" colspan="3">b!maid 🔞</td>
-												<td class="column3 style2 s style2" colspan="6">Get maid images</td>
-											  </tr>
-											  <tr class="row53">
-												<td class="column0 style3 s style3" colspan="3">b!doujin 🔞</td>
-												<td class="column3 style9 s style11" colspan="6">Get doujin images</td>
-											  </tr>
-											  <tr class="row54">
-												<td class="column0 style2 s style2" colspan="3">b!neko 🔞</td>
-												<td class="column3 style2 s style2" colspan="6">Get neko images</td>
-											  </tr>
-											  <tr class="row55">
-												<td class="column0 style2 s style2" colspan="3">b!pornhub &lt;title&gt 🔞</td>
-												<td class="column3 style2 s style2" colspan="6">Search Pornhub videos</td>
-											  </tr>
-											  <tr class="row56">
-												<td class="column0 style3 s style3" colspan="3">b!rule34 &lt;tags&gt 🔞</td>
-												<td class="column3 style9 s style11" colspan="6">Search Rule34 images</td>
-											  </tr>
-											  <tr class="row55">
-												<td class="column0 style2 s style2" colspan="3">b!ahegao &lt;title&gt 🔞</td>
-												<td class="column3 style2 s style2" colspan="6">Send random ahegao pics</td>
-											  </tr>
-											  <tr class="row57">
-												<td class="title" colspan="9" ><h3 style="font-size:30px;"><b>&gt; Utility Commands</b></h3></td>
-											  </tr>
-											  <tr class="row58">
-												<td class="column0 style3 s style3" colspan="3">b!hastebin &lt;title&gt;;&lt;content&gt;</td>
-												<td class="column3 style3 s style3" colspan="6">Create an hastebin link</td>
-											  </tr>
-											  <tr class="row59">
-												<td class="column0 style2 s style2" colspan="3">b!report &lt;text&gt;</td>
-												<td class="column3 style2 s style2" colspan="6">Report bot bugs</td>
-											  </tr>
-											  <tr class="row60">
-												<td class="column0 style3 s style3" colspan="3">b!poll &lt;question&gt;;[answer 1];[answer 2]</td>
-												<td class="column3 style3 s style3" colspan="6">Create a poll</td>
-											  </tr>
-											  <tr class="row61">
-												<td class="column0 style2 s style2" colspan="3">b!avatar [@user]</td>
-												<td class="column3 style2 s style2" colspan="6">View an user avatar</td>
-											  </tr>
-											  <tr class="row62">
-												<td class="column0 style3 s style3" colspan="3">b!botinfo</td>
-												<td class="column3 style3 s style3" colspan="6">View bot stats</td>
-											  </tr>
-											  <tr class="row63">
-												<td class="column0 style2 s style2" colspan="3">b!help</td>
-												<td class="column3 style2 s style2" colspan="6">View commands list</td>
-											  </tr>
-											  <tr class="row64">
-												<td class="column0 style5 s style5" colspan="3">b!ping</td>
-												<td class="column3 style5 s style5" colspan="6">View bot's latency</td>
-											  </tr>
-											  <tr class="row65">
-												<td class="column0 style2 s style2" colspan="3">b!serverinfo</td>
-												<td class="column3 style2 s style2" colspan="6">View server's stats</td>
-											  </tr>
-											  <tr class="row66">
-												<td class="column0 style3 s style3" colspan="3">b!whois [@user]</td>
-												<td class="column3 style3 s style3" colspan="6">View user's info</td>
-											  </tr>
-											  <tr class="row67">
-												<td class="column0 style2 s style2" colspan="3">b!invite</td>
-												<td class="column3 style2 s style2" colspan="6">Send bot invite</td>
-											  </tr>
-											</tbody>
-										</table>
-										<!-- TABLE END -->
-									</a>
-								</div>
-								<div>
-									<a>
-										<h1><span class="emoji" style="color:cyan;">⚠️ Legend:</span></h1>
-										<h3>
-										<p style="text-align: center;"><strong>&lt; &gt; Non-Optional</strong></p>
-										<p style="text-align: center;"><strong>[ ] Optional</strong></p>
-										<p style="text-align: center;"><strong>🛡️ Needs Permissions</strong></p>
-										<p style="text-align: center;"><strong>🔞 NSFW content</strong></p>
-									</h3>
-									</a>
-								</div>
-								
-							</section>
-
-					</section>
-
-				<!-- Footer -->
-					<footer id="footer" class="container">
-						<p>🍔 BurgerBot 3.0 | Created By: <strong>Toxi10 ➣ ᴰᵉᵛ#9909</strong></p>
-					</footer>
+				<footer id="footer" class="container">
+					<p style="text-align:center;margin-bottom: 2%;margin-top: 2%;">🍔 BurgerBot | Created By: <strong>Toxi10 ➣ ᴰᵉᵛ#9909</strong></p>
+				  </footer>
 
 			</div>
 
-		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/main.js"></script>
-
+		</div>
 	</body>
 </html>
